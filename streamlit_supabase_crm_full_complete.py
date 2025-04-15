@@ -9,6 +9,7 @@ import io
 import zipfile
 
 st.set_page_config(page_title='CRM Ultimate', layout='wide')
+st.title("Supabase CRM - Final Merged Version")
 
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
