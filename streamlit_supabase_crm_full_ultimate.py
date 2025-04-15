@@ -139,6 +139,30 @@ with tabs[1]:
         new_tags = st.text_input("Tags", value=row["tags"], key="edit_tags")
         new_notes = st.text_area("Notes", value=row["notes"], key="edit_notes")
 
+st.markdown("### Add New Contact")
+new_name = st.text_input("New Name", key="new_name")
+new_email = st.text_input("New Email", key="new_email")
+new_phone = st.text_input("New Phone", key="new_phone")
+new_company = st.text_input("New Company", key="new_company")
+new_tags = st.text_input("New Tags", key="new_tags")
+new_notes = st.text_area("New Notes", key="new_notes")
+
+    if st.button("Add Contact"):
+    if new_name:
+        supabase.table("contacts").insert({
+            "id": str(uuid.uuid4()),
+            "name": new_name,
+            "email": new_email,
+            "phone": new_phone,
+            "company": new_company,
+            "tags": new_tags,
+            "notes": new_notes
+        }).execute()
+        st.success("Contact added.")
+        st.rerun()
+    else:
+        st.warning("Name is required.")  
+        
         if st.button("Update Contact"):
             supabase.table("contacts").update({
                 "name": new_name,
