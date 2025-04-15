@@ -147,7 +147,7 @@ new_company = st.text_input("New Company", key="new_company")
 new_tags = st.text_input("New Tags", key="new_tags")
 new_notes = st.text_area("New Notes", key="new_notes")
 
- if st.button("Add Contact"):
+if st.button("Add Contact"):
     if new_name:
         supabase.table("contacts").insert({
             "id": str(uuid.uuid4()),
