@@ -163,7 +163,7 @@ with tabs[2]:
     link_map = get_linked_contacts()
     for note in notes:
         st.markdown(f"### {note['title']} ({note['date']})")
-        st.markdown(f"**Participants:** {note['participants']}  
+        st.markdown(f"**Participants:** {note['participants']}") 
 **Tags:** {note['tags']}  
 **Contacts:** {', '.join(link_map.get(note['id'], []))}")
         st.markdown(note['body'])
