@@ -164,7 +164,7 @@ with tabs[2]:
     for note in notes:
         st.markdown(f"### {note['title']} ({note['date']})")
         st.markdown(f"**Participants:** {note['participants']}") 
-**Tags:** {note['tags']}  
+st.markdown(f"**Tags:** {note['tags']}")  
 st.markdown(f"**Contacts:** {', '.join(link_map.get(note['id'], []))}")
         st.markdown(note['body'])
         st.download_button("Download Note", data=note['body'], file_name=f"{note['title']}.txt")
