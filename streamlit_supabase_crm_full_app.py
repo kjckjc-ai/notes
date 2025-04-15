@@ -15,7 +15,7 @@ def init_supabase():
 
 supabase: Client = init_supabase()
 
-st.title("Supabase CRM - Notes + Contacts + Actions")
+st.title("KJC Supabase CRM")
 
 # Fetch all contacts
 def fetch_contacts():
